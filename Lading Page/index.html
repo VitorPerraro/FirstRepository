@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/media.css">
-    <script src="index.js"></script>
     <title>Landing Page</title>
 </head>
 <body>
@@ -33,16 +32,42 @@
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <form>
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="E-mail">
-                <input type="submit" value="Enviar >" onclick="verificar()">
-
+                <input type="text" id="inputName" placeholder="Nome">
+                <input type="text" id="inputEmail"  placeholder="E-mail"><br>
+                
+                <button id="button1" onclick="verificar(event)"><li>Enviar</li></button>
             </form>
+            <div id="tx">
+
+            </div>
+           
+            <script>
+                function verificar (event){   
+
+                event.preventDefault();
+
+                const name = document.getElementById('inputName').value
+                const email = document.getElementById('inputEmail').value
+
+                document.getElementById('name')
+                document.getElementById('email')
+
+
+            if (name != '' && email != ""){
+                var texto = document.getElementById('tx').innerText = `Olá ${name} você receberá nossa Newslatter pelo e-mail: ${email} !`;
+                document.getElementById('inputName').value = '';
+                document.getElementById('inputEmail').value = '';
+            }
+            else{
+                alert("Por favor, digite alguma coisa!.");
+            }
+};
+        </script>
         </aside>
         <article>
             <img src="./components/images/77d0a7c454e658833800528e748edbe9.png" alt="mulher-roxa">
         </article>
-    </main>
-    
+    </main>    
 </body>
 </html>
+
